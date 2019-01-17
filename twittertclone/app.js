@@ -5,10 +5,7 @@ let { logininfo, registerinfo, tweetinfo, commentinfo, tweetListinfo, tweetContr
 let UserController = require('./sources/controllers/usercontrol');
 let TweetController = require('./sources/controllers/tweetcontrol');
 let CommentController = require('./sources/controllers/commentcontrol');
-let TimeAgo = require('javascript-time-ago')
-let en = require('javascript-time-ago/locale/en')
-TimeAgo.addLocale(en)
-const timeAgo = new TimeAgo('en-US')
+
 
 
 program
@@ -69,7 +66,6 @@ program
             if (uid) {
                 prompt(tweetinfo).then(answers => {
                     answers.uid = uid
-                    answers.date = Date.now()
                     let tweetController = new TweetController();
                     tweetController.createTweet(answers)
                 })
@@ -89,8 +85,7 @@ program
                 tweetController.showTweets((tw) => {
                     let tweets = []
                     tw.forEach(function (doc) {
-                        tweets.push(doc.data().content + "\t (" + timeAgo.format(doc.data().date) + ") \n" + doc.id)
-                    });
+                        tweets.push(doc.data().content + "\t});
                     prompt(tweetListinfo(tweets)).then((answers) => {
                         let id = answers.id.split("\n")[1]
                         prompt(tweetControlinfo(tweets)).then((answers) => {
