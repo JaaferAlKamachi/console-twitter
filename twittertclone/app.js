@@ -11,7 +11,6 @@ TimeAgo.addLocale(en)
 const timeAgo = new TimeAgo('en-US')
 
 
-// LOGIN==LOGIN==LOGIN==LOGIN==LOGIN==LOGIN==LOGIN==LOGIN==LOGIN==
 program
     .command('login')
     .alias('l')
@@ -28,8 +27,6 @@ program
             })
         })
     });
-
-// REGISTER==REGISTER===REGISTER==REGISTER====REGISTER====
 program
     .command('register')
     .alias('r')
@@ -47,7 +44,6 @@ program
         })
     });
 
-// LOGOUT==LOGOUT===LOGOUT==LOGOUT====LOGOUT====
 program
     .command('logout')
     .alias('lo')
@@ -64,8 +60,6 @@ program
         })
     });
 
-
-// create Tweet==create Tweet===create Tweet==create Tweet====create Tweet====
 program
     .command('tweet')
     .alias('tw')
@@ -84,9 +78,6 @@ program
             }
         })
     });
-
-
-// show Tweet==show Tweet===show Tweet==show Tweet====show Tweet====
 program
     .command('home')
     .alias('h')
@@ -112,9 +103,7 @@ program
                                     commentController.createComment(answers)
                                 })
                             }
-                            if(answers.control == 'Show Comments'){
-                                commentController.showComments(id);
-                            }
+                            if(answers.control == 'Show Comments'){commentController.showComments(id);}
                         })
                     })
                 })
