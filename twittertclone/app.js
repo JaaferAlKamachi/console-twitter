@@ -1,6 +1,6 @@
 let program = require('commander');
 let UserConfig = require('./sources/userconfig')
-var { prompt } = require('inquirer');
+var  prompt  = require('inquirer');
 let { logininfo, registerinfo } = require('./sources/info');
 let UserController = require('./sources/controllers/usercontrol');
 
