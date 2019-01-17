@@ -3,7 +3,6 @@ let fs = require('fs')
 
 class UserConfig {
     static setLogin(uid) {
-        // const data = new Uint8Array(Buffer.from(uid));
         fs.writeFile('conf.txt', uid, 'utf8', (err) => {
             if (err) throw err;
         });
